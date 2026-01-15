@@ -159,6 +159,7 @@ export default function SimulationConfig() {
              <FieldRow
               icon={<Clock size={16} />}
               label="Planning Horizon"
+              description="The number of future steps the planner looks ahead when computing paths"
               value={planningHorizon}
               min={10}
               max={200}
@@ -170,6 +171,7 @@ export default function SimulationConfig() {
             <FieldRow
               icon={<Clock size={16} />}
               label="Goal Reserve Horizon"
+              description="The duration for which a parking spot is reserved for an assigned vehicle during planning"
               value={goalReserveHorizon}
               min={10}
               max={500}
@@ -243,6 +245,7 @@ function SelectRow(props: {
 function FieldRow(props: {
   icon?: React.ReactNode;
   label: string;
+  description?: string;
   value: number;
   min: number;
   max: number;
@@ -252,7 +255,7 @@ function FieldRow(props: {
   defaultHint?: string;
   suffix?: string;
 }) {
-  const { icon, label, value, min, max, step, onChange, onDefault, defaultHint, suffix } = props;
+  const { icon, label, description, value, min, max, step, onChange, onDefault, defaultHint, suffix } = props;
 
   return (
     <div className="fieldRow">
@@ -266,6 +269,8 @@ function FieldRow(props: {
           {defaultHint ?? "default"}
         </button>
       </div>
+
+      {description ? <div className="fieldDescription">{description}</div> : null}
 
       <div className="fieldBottom">
         <input
