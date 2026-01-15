@@ -22,7 +22,6 @@
   padding: 0 1.5rem;
   height: 72px;
   background: rgba(15, 23, 42, 0.95);
-  /* backdrop-filter: blur(16px) saturate(1.8); Removed for performance */
   border: 1px solid rgba(148, 163, 184, 0.15);
   border-radius: 20px;
   box-shadow: 
@@ -138,7 +137,6 @@
   box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
 }
 
-/* Reusing ghost button from Editor styles concept */
 .btnGhost {
   display: flex;
   align-items: center;
@@ -165,7 +163,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Removed generic white/gray background */
   background: transparent; 
   border-radius: 12px;
   overflow: hidden;
@@ -213,7 +210,7 @@
   gap: 1rem;
   width: 100%;
   height: 100%;
-  padding: 0; /* Remove padding to let it fill space */
+  padding: 0;
   overflow: hidden;
   position: relative;
 }
@@ -234,25 +231,25 @@
     0 20px 50px -10px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(148, 163, 184, 0.1);
   border-radius: 8px;
-  background: rgba(15, 23, 42, 0.95); /* Dark glass */
+  background: rgba(15, 23, 42, 0.95); 
   margin: auto;
-  position: relative; /* Essential for overlaying canvas on grid */
-  overflow: hidden; /* Ensure content stays within rounded corners */
+  position: relative; 
+  overflow: hidden; 
 }
 
-/* ============ 2D SIMULATION STYLES (MATCHING EDITOR) ============ */
+/* ============ 2D SIMULATION STYLES ============ */
 .simCanvasScroll {
   width: 100%;
   height: 100%;
-  overflow: hidden; /* No scrolling, we scale to fit */
+  overflow: hidden; 
   display: grid;
-  place-items: center; /* Center content */
-  position: absolute; /* Behind the canvas */
+  place-items: center; 
+  position: absolute; 
   inset: 0;
 }
 
 .simGridWrap {
-  transform-origin: center; /* Center scaling */
+  transform-origin: center; 
   will-change: transform;
 }
 
@@ -261,7 +258,7 @@
   gap: 1px;
   padding: 1px;
   border-radius: 14px;
-  background-color: rgba(56, 189, 248, 0.10); /* grid lines */
+  background-color: rgba(56, 189, 248, 0.10); 
   box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.10),
     0 20px 50px -10px rgba(0, 0, 0, 0.50);
   border: 1px solid rgba(56, 189, 248, 0.20);
@@ -273,7 +270,7 @@
   position: relative;
   box-sizing: border-box;
   
-  border-radius: 0; /* square tiles */
+  border-radius: 0; 
   background: rgba(255, 255, 255, 0.01);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
@@ -371,7 +368,7 @@
 
 .simCell.cell-ENTRY::after,
 .simCell.cell-EXIT::after {
-  content: attr(data-mark); /* IN / OUT */
+  content: attr(data-mark); 
   position: absolute;
   inset: 0;
   display: grid;
@@ -392,7 +389,6 @@
   flex-direction: column;
   gap: 1.5rem;
   background: rgba(15, 23, 42, 0.95);
-  /* backdrop-filter: blur(16px) saturate(1.8); Removed for performance */
   border: 1px solid rgba(148, 163, 184, 0.15);
   padding: 1.5rem;
   border-radius: 16px;
@@ -453,11 +449,10 @@
   align-self: center;
 }
 
-/* Canvas for cars - overlay */
 .simCanvas {
   position: absolute;
   inset: 0;
-  pointer-events: none; /* Let clicks pass through if needed, though sim is not interactive on grid */
+  pointer-events: none;
   width: 100%;
   height: 100%;
   z-index: 2;

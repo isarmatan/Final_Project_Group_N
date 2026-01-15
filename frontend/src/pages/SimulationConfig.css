@@ -10,7 +10,6 @@
 .setupHeader{ margin: 0 0 14px; padding: 1.5rem; border-radius: 20px;
   border: 1px solid rgba(148, 163, 184, 0.15);
   background: rgba(15, 23, 42, 0.95);
-  /* backdrop-filter: blur(16px) saturate(1.8); Removed for performance */
   box-shadow: 
     0 10px 30px -5px rgba(0,0,0,0.3),
     inset 0 1px 0 rgba(255,255,255,0.05);
@@ -56,9 +55,6 @@
 
   background: rgba(15, 23, 42, 0.95);
   border: 1px solid rgba(148, 163, 184, 0.1);
-  
-  /* backdrop-filter: blur(20px); Removed for performance */
-  /* -webkit-backdrop-filter: blur(20px); Removed for performance */
 
   box-shadow: 
     0 25px 50px -12px rgba(0, 0, 0, 0.5),
@@ -109,7 +105,7 @@
   border: 1px solid rgba(56, 189, 248, 0.3);
   color: #38bdf8;
   box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
-  -webkit-text-fill-color: initial; /* Reset text fill for icon */
+  -webkit-text-fill-color: initial; 
 }
 
 .iconBadge{
@@ -274,7 +270,7 @@
   color: white;
   border: none;
   box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-  height: 56px; /* Slightly taller */
+  height: 56px; 
   font-size: 1rem;
 }
 
@@ -284,14 +280,14 @@
   filter: brightness(1.1);
 }
 
-/* Highlight Card (Selected Parking) */
+/* Highlight Card */
 .setupCard.highlight {
   border-color: rgba(34, 197, 94, 0.3);
   box-shadow: 
     0 25px 50px -12px rgba(0, 0, 0, 0.5),
     inset 0 0 20px rgba(34, 197, 94, 0.05);
   background: rgba(15, 23, 42, 0.98);
-  height: auto; /* Prevent stretching */
+  height: auto; 
   animation: slideUp 0.3s ease-out;
 }
 
@@ -313,7 +309,7 @@
 }
 
 .setupCard.highlight .setupActions {
-  grid-template-columns: 1fr; /* Full width button */
+  grid-template-columns: 1fr; 
 }
 
 @keyframes slideUp {

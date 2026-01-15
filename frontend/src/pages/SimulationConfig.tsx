@@ -25,7 +25,7 @@ export default function SimulationConfig() {
   // State matching backend API
   const [planningHorizon, setPlanningHorizon] = useState<number>(50);
   const [goalReserveHorizon, setGoalReserveHorizon] = useState<number>(200);
-  const [arrivalLambda, setArrivalLambda] = useState<number>(0.5);
+  const [arrivalLambda, setArrivalLambda] = useState<number>(1);
   const [maxArrivingCars, setMaxArrivingCars] = useState<number>(1);
   const [initialParkedCars, setInitialParkedCars] = useState<number>(0);
   const [initialActiveCars, setInitialActiveCars] = useState<number>(1);
@@ -37,7 +37,7 @@ export default function SimulationConfig() {
     () => ({
       planning_horizon: 50,
       goal_reserve_horizon: 200,
-      arrival_lambda: 0.5,
+      arrival_lambda: 1,
       max_arriving_cars: 1,
       initial_parked_cars: 0,
       initial_active_cars: 1,
@@ -78,7 +78,7 @@ export default function SimulationConfig() {
 
             <FieldRow
               icon={<Hash size={16} />}
-              label="Initial Parked Cars"
+              label="Static Parked Cars"
               value={initialParkedCars}
               min={0}
               max={500}
@@ -89,7 +89,7 @@ export default function SimulationConfig() {
 
             <FieldRow
               icon={<Hash size={16} />}
-              label="Initial Active Cars"
+              label="Exiting Cars"
               value={initialActiveCars}
               min={0}
               max={500}
@@ -100,7 +100,7 @@ export default function SimulationConfig() {
 
              <FieldRow
               icon={<LogOut size={16} />}
-              label="Init Active Exit Rate"
+              label="Exit Rate (λ)"
               value={initialActiveExitRate}
               min={0}
               max={1}
@@ -111,7 +111,7 @@ export default function SimulationConfig() {
 
             <FieldRow
               icon={<LogIn size={16} />}
-              label="Max Arriving Cars"
+              label="Entering Cars"
               value={maxArrivingCars}
               min={0}
               max={500}
@@ -119,10 +119,21 @@ export default function SimulationConfig() {
               onChange={setMaxArrivingCars}
               onDefault={() => setMaxArrivingCars(defaults.max_arriving_cars)}
             />
+            <FieldRow
+              icon={<Activity size={16} />}
+              label="Enter Rate (λ)"
+              value={arrivalLambda}
+              min={0}
+              max={1}
+              step={0.1}
+              onChange={setArrivalLambda}
+              onDefault={() => setArrivalLambda(defaults.arrival_lambda)}
+              suffix="veh/min"
+            />
           </section>
 
           <section className="setupCard">
-            <CardHead icon={<Activity size={18} />} title="Process Parameters" sub="Timing & Pathfinding." />
+            <CardHead icon={<Activity size={18} />} title="Simulation Parameters" sub="Timing & Pathfinding." />
 
             <SelectRow
               icon={<Cpu size={16} />}
@@ -132,17 +143,7 @@ export default function SimulationConfig() {
               onChange={setAlgorithm}
             />
 
-            <FieldRow
-              icon={<Activity size={16} />}
-              label="Arrival Rate (λ)"
-              value={arrivalLambda}
-              min={0}
-              max={10}
-              step={0.1}
-              onChange={setArrivalLambda}
-              onDefault={() => setArrivalLambda(defaults.arrival_lambda)}
-              suffix="veh/min"
-            />
+
 
             <FieldRow
               icon={<Clock size={16} />}
@@ -193,7 +194,7 @@ export default function SimulationConfig() {
   );
 }
 
-/* ---------- small components (same style as before) ---------- */
+/* ---------- small components ---------- */
 
 function CardHead(props: { icon: React.ReactNode; title: string; sub: string }) {
   return (

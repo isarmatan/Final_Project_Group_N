@@ -119,7 +119,7 @@ export default function SavedLayouts() {
 
         {/* Back button */}
         <div className="setupActions setupActions--single">
-          <button className="btnGhost" onClick={() => navigate("/layout")}>
+          <button className="btnBackPrimary" onClick={() => navigate("/layout")}>
             ← Back
           </button>
         </div>

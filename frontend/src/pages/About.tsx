@@ -1,5 +1,5 @@
 import AppLayout from "../layouts/AppLayout";
-import { Target, Code2, GraduationCap, Users, BrainCircuit, Car, Server, Layers } from "lucide-react";
+import { Target, Code2, GraduationCap, Users, BrainCircuit, Car, Layers } from "lucide-react";
 import "./About.css";
 
 export default function About() {
@@ -119,6 +119,20 @@ export default function About() {
                 <div className="memberInfo">
                   <span className="name">Noa Revivo</span>
                   <span className="role">Developer</span>
+                </div>
+              </div>
+              <div className="teamMember">
+                <div className="avatar adviser">R</div>
+                <div className="memberInfo">
+                  <span className="name">Roni Stern</span>
+                  <span className="role">Adviser</span>
+                </div>
+              </div>
+              <div className="teamMember">
+                <div className="avatar adviser">N</div>
+                <div className="memberInfo">
+                  <span className="name">Noam Barda</span>
+                  <span className="role">Adviser</span>
                 </div>
               </div>
             </div>

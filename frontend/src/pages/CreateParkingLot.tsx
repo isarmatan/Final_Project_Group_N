@@ -22,9 +22,9 @@ export default function CreateParkingLot() {
   const [width, setWidth] = useState(20);
   const [entries, setEntries] = useState(1);
   const [exits, setExits] = useState(1);
-  const [totalSpots, setTotalSpots] = useState(200);
+  const [totalSpots, setTotalSpots] = useState(144);
 
-  const defaults = useMemo(() => ({ length: 20, width: 20, entries: 1, exits: 1, totalSpots: 200 }), []);
+  const defaults = useMemo(() => ({ length: 20, width: 20, entries: 1, exits: 1, totalSpots: 144 }), []);
 
   const onSave = () => {
     const layout: NewLayout = {
@@ -36,7 +36,6 @@ export default function CreateParkingLot() {
     };
 
     sessionStorage.setItem(LAYOUT_KEY, JSON.stringify(layout));
-    // מסמנים שבחרנו layout חדש:
     nav("/layout?layout=new");
   };
 
@@ -67,7 +66,7 @@ export default function CreateParkingLot() {
         </section>
 
         <div className="setupActions">
-          <button className="btnGhost" onClick={() => nav(-1)}>
+          <button className="btnBackPrimary" onClick={() => nav(-1)}>
             ← Back
           </button>
           <button className="btnPrimary" onClick={onSave}>

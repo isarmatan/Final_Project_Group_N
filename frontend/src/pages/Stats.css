@@ -1,6 +1,4 @@
-/* Stats.css */
-
-/* ===== Theme (bright neon / pastel-glow) ===== */
+/* ===== Theme ===== */
 :root{
   --text: rgba(255,255,255,.95);
   --muted: rgba(255,255,255,.78);
@@ -90,7 +88,7 @@
   margin: 0;
 }
 
-/* ===== Controls (Search) ===== */
+/* ===== Controls ===== */
 .statsControls {
   display: flex;
   gap: 0.75rem;
@@ -111,7 +109,6 @@
   background: rgba(255,255,255,.16);
   color: rgba(255,255,255,0.96);
   outline: none;
-  /* backdrop-filter: blur(12px); Removed for performance */
   transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease, background .2s ease;
 }
 
@@ -153,8 +150,6 @@
   padding: 14px 14px 12px;
   overflow: hidden;
 
-  /* backdrop-filter removed for performance */
-  /* -webkit-backdrop-filter removed */
 
   /* DARK GLASS */
   background:
@@ -220,7 +215,6 @@
 
 .statsTableContainer.glass{
   position: relative;
-  /* backdrop-filter removed for performance */
 
   background:
     linear-gradient(180deg, rgba(255,255,255,0.04), transparent 55%),
@@ -389,7 +383,6 @@
   background: rgba(255,255,255,.16);
   border: 1px solid rgba(255,255,255,.22);
   border-radius: 18px;
-  /* backdrop-filter: blur(12px); Removed */
 }
 
 /* ===== Delete Actions ===== */
@@ -416,7 +409,6 @@
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
-  /* backdrop-filter: blur(6px); Removed for performance */
   display: flex;
   align-items: center;
   justify-content: center;

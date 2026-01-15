@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import "./AppLayout.css";
+import logo from "../assets/logo.png";
+
 
 type Props = {
   children: ReactNode;
@@ -34,7 +36,17 @@ export default function AppLayout({ children, variant = "workspace", bgImage }: 
 
           <span className="appLayout__divider" aria-hidden="true" />
 
-          <span className="appLayout__title">Autonomous Parking Simulator</span>
+          <span className="appLayout__title">
+            Autonomous Parking Simulator
+          </span>
+
+          <img
+            src={logo}
+            alt="Autonomous Parking Simulator logo"
+            className="appLayout__logo appLayout__logo--right"
+          />
+
+
         </div>
       </header>
 

@@ -63,7 +63,7 @@ type TimestepStats = {
 
 type Timestep = {
   t: number;
-  cars: Record<string, [number, number, number]>; // car_id -> [x, y, is_initial]
+  cars: Record<string, [number, number, number]>;
   stats: TimestepStats;
 };
 
@@ -94,7 +94,7 @@ const API_URL = "http://127.0.0.1:8000";
 const CONFIG_KEY = "sim_config_v1";
 const LAYOUT_KEY = "parking_layout_v1";
 
-const CELL_SIZE = 32;
+// const CELL_SIZE = 32;
 const COLORS = {
   WALL: "#1e293b",
   ROAD: "rgba(255, 255, 255, 0.05)",
@@ -464,12 +464,17 @@ export default function Simulation() {
       }
       
       setSaved(true);
-    } catch (err: any) {
-      console.error(err);
-      alert(err.message);
-    } finally {
-      setSaving(false);
-    }
+    } catch (err: unknown) {
+        console.error(err);
+
+        if (err instanceof Error) {
+          alert(err.message);
+        } else {
+          alert("Failed to save results");
+        }
+      } finally {
+        setSaving(false);
+      }
   };
 
   return (

@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 16px; /* Spacing between Header and Workspace */
-  background-color: #050b14; /* Deep dark background */
+  gap: 16px;
+  background-color: #050b14; 
   background-image:
     radial-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px), /* Tech dots everywhere */
     radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.08), transparent 25%),
@@ -12,7 +12,7 @@
   color: #e2e8f0;
   font-family: "Inter", system-ui, sans-serif;
   overflow: hidden;
-  padding-bottom: 16px; /* Bottom spacing */
+  padding-bottom: 16px;
 }
 
 .editorHeader {
@@ -24,7 +24,6 @@
   background: rgba(15, 23, 42, 0.95);
   border: 1px solid rgba(148, 163, 184, 0.15);
   z-index: 20;
-  /* Floating Capsule Style */
   margin: 16px 16px 0 16px;
   border-radius: 20px;
   box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3),
@@ -58,15 +57,15 @@
   display: flex;
   overflow: hidden;
   position: relative;
-  gap: 16px; /* Gap between Sidebar and Canvas */
-  padding-right: 16px; /* Align with Header's right margin */
+  gap: 16px; 
+  padding-right: 16px; 
 }
 
 /* Sidebar as a Floating Glass Panel */
 .editorSidebar {
   width: 320px;
-  background: rgba(15, 23, 42, 0.95); /* Increased opacity */
-  border: 1px solid rgba(148, 163, 184, 0.15); /* All-around subtle border */
+  background: rgba(15, 23, 42, 0.95); 
+  border: 1px solid rgba(148, 163, 184, 0.15); 
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
@@ -74,9 +73,8 @@
   overflow-y: auto;
   z-index: 10;
   box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05); /* Top highlight */
+    inset 0 1px 0 rgba(255, 255, 255, 0.05); 
 
-  /* Floating Positioning */
   margin-left: 16px;
   border-radius: 20px;
   height: 100%;
@@ -192,12 +190,10 @@
 /* Canvas Area */
 .editorCanvasContainer {
   flex: 1;
-  background: transparent; /* Allows main page gradient to show through */
+  background: transparent; 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* חשוב: במצב 2D אנחנו נעשה fit, אז לא רוצים גלילה פה */
   overflow: hidden;
 
   padding: 2rem;
@@ -217,9 +213,9 @@
 .editorCanvasScroll {
   width: 100%;
   height: 100%;
-  overflow: hidden; /* אין גלילה - רואים הכל דרך scale */
+  overflow: hidden;
   display: grid;
-  place-items: center; /* מרכז */
+  place-items: center;
 }
 
 .editorGridWrap {

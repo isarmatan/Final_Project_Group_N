@@ -10,7 +10,7 @@ const CFG_KEY = "sim_config_v1";
 export default function Layout() {
   const nav = useNavigate();
   const [params] = useSearchParams();
-  const chosenLayoutId = params.get("layout"); // e.g. l1 OR "new"
+  const chosenLayoutId = params.get("layout");
   const [hasConfig] = useState(() => !!sessionStorage.getItem(CFG_KEY));
 
 

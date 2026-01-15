@@ -34,7 +34,6 @@
   border-radius: 12px;
   border: 1px solid rgba(148, 163, 184, 0.2);
   background: rgba(15, 23, 42, 0.95);
-  /* backdrop-filter: blur(10px); Removed for performance */
   color: #f1f5f9;
   font-weight: 900;
   cursor:pointer;
@@ -93,7 +92,6 @@
   border-radius: 16px;
   border: 1px solid rgba(148, 163, 184, 0.15);
   background: rgba(15, 23, 42, 0.95);
-  /* backdrop-filter: blur(12px); Removed for performance */
   padding: 1.5rem;
   cursor: pointer;
   position: relative;
@@ -184,7 +182,6 @@
   opacity: 1;
 }
 
-/* Loading/Error States */
 .loadingState, .errorState {
   padding: 3rem;
   text-align: center;

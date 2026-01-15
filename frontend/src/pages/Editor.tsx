@@ -240,8 +240,6 @@ export default function Editor() {
 
       const sx = (availableW - margin) / gridW;
       const sy = (availableH - margin) / gridH;
-
-      // do not auto-zoom in above 1, only zoom out if needed
       const s = Math.min(1, sx, sy);
 
       setGridScale(Math.max(0.25, s));
