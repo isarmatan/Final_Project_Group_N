@@ -208,7 +208,7 @@ http://127.0.0.1:8000/docs
 
 ## 💡 Future Improvements
 
-* Advanced MAPF algorithms (CBS, M*)
+* Advanced MAPF algorithms (Priority planning)
 * Real-time adaptive replanning
 * Improved UI/UX
 * Scalability for large environments
